@@ -1,0 +1,11 @@
+python get-kenmo-thread.py
+python test.py
+
+パッケージ書き出し
+pip freeze > requirements.txt
+パッケージインストール
+pip install -r requirements.txt
+
+gcloud builds submit --tag gcr.io/hey-abe/get-kenmo-thread --project hey-abe
+
+curl -X POST -H "Content-Type: application/json; charset=utf-8" -d '{"data":"あなたは安倍晋三ですか"}' https://get-kenmo-thread-omc3n2et7a-an.a.run.app
